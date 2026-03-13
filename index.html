@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Aquarius Security Services</title>
+
+<meta name="description" content="Professional security services for churches, events, commercial properties and plazas in Pompano Beach Florida.">
+
+<meta property="og:title" content="Aquarius Security Services">
+<meta property="og:description" content="Professional security services in South Florida">
+<meta property="og:type" content="website">
+
+<style>
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+:root {
+  --bg: #050505;
+  --surface: #121212;
+  --gold: #8A5A2E;
+  --gold-light: #C08A52;
+  --text: #ffffff;
+  --muted: #c7c7c7;
+  --radius: 12px;
+  --max: 1100px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI;
+  background: radial-gradient(circle at top, #151515 0, #050505 55%, #000 100%);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+section {
+  max-width: var(--max);
+  margin: auto;
+  padding: 3rem 1.25rem;
+}
+
+img {
+  width: 100%;
+  display: block;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+/* =========================================================
+   HEADER (DESKTOP) — VERSION B
+========================================================= */
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(5,5,5,.85);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  transition: .3s;
+}
+
+.header.scrolled {
+  background: rgba(0,0,0,.95);
+  box-shadow: 0 10px 30px rgba(0,0,0,.6);
+}
+
+.nav {
+  max-width: var(--max);
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+}
+
+/* LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo img {
+  height: 58px;
+}
+
+.logo-text {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.logo-text span {
+  color: var(--gold-light);
+}
+
+/* NAV LINKS */
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #cfcfcf;
+  font-size: 15px;
+  font-weight: 500;
+  position: relative;
+  transition: .3s;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--gold-light);
+  transition: .3s;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* BUTTONS */
+.nav-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: .3s;
+}
+
+.btn-outline {
+  border: 1px solid rgba(255,255,255,.25);
+  color: white;
+}
+
+.btn-outline:hover {
+  background: white;
+  color: black;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  color: black;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(192,138,82,.45);
+}
+
+/* =========================================================
+   HAMBURGER MENU (MOBILE)
+========================================================= */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 3px;
+  background: white;
+  border-radius: 3px;
+}
+
+@media (max-width: 900px) {
+  .nav-links {
+    position: absolute;
+    top: 80px;
+    right: -100%;
+    background: #0b0b0b;
+    flex-direction: column;
+    padding: 30px;
+    width: 240px;
+    height: calc(100vh - 80px);
+    transition: .4s;
+  }
+
+  .nav-links.open {
+    right: 0;
+  }
+
+  .nav-buttons {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+  margin-top: 90px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.hero img {
+  height: 420px;
+  box-shadow: 0 20px 40px rgba(0,0,0,.6);
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 1.4rem;
+}
+
+.card {
+  background: var(--surface);
+  padding: 1.2rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,.08);
+  transition: .3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,.6);
+}
+
+.card img {
+  height: 240px;
+  margin-bottom: .8rem;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.split img {
+  height: 360px;
+}
+
+@media (max-width: 900px) {
+  .split {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   FOUNDER
+========================================================= */
+
+.founder-section.founder-50-50 {
+  display: grid;
+  grid-template-columns: minmax(280px, 460px) 1fr;
+  gap: 1.1rem; /* antes 3rem */
+  align-items: center;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 3rem 1.25rem;
+  background: rgba(255,255,255,0.03);
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 0 25px rgba(0,0,0,0.4);
+}
+
+.founder-image-side {
+  width: 100%;
+}
+
+.founder-premium-img{
+width:100%;
+max-width:320px;
+height:420px;
+object-fit:cover;
+object-position:center top;
+border-radius:50% / 40%; /* forma ovalada */
+border:3px solid rgba(192,138,82,0.55);
+box-shadow:0 15px 40px rgba(0,0,0,.6);
+margin:auto;
+display:block;
+}
+
+.founder-text-side {
+  min-width: 0;
+}
+
+.founder-title {
+  margin: 0 0 0.6rem 0;
+}
+
+.founder-name {
+  margin: 0 0 1rem 0;
+}
+
+.founder-description {
+  text-align: justify;
+  line-height: 1.8;
+  margin: 0 0 1.8rem 0;
+  color: var(--text);
+}
+
+.founder-btn {
+  display: inline-block;
+  margin-top: 0;
+  position: static;
+  vertical-align: top;
+}
+
+@media (max-width: 768px) {
+  .founder-section.founder-50-50 {
+    grid-template-columns: 1fr;
+  }
+
+  .founder-premium-img {
+    height: 320px;
+  }
+}
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,.15);
+  background: #111;
+  color: white;
+}
+
+textarea {
+  min-height: 120px;
+}
+
+.contact-links {
+  margin-top: 10px;
+  display: flex;
+  gap: 14px;
+}
+
+.contact-links a {
+  color: var(--gold-light);
+  text-decoration: none;
+}
+
+/* ============================
+   ABOUT — PREMIUM REDESIGN
+============================ */
+
+.about-premium {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+  padding: 3rem 1.25rem;
+  max-width: var(--max);
+  margin: auto;
+}
+
+/* LEFT SIDE */
+.about-title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  margin-bottom: 0.6rem;
+}
+
+.about-subtitle {
+  color: var(--muted);
+  font-size: 1.1rem;
+  margin-bottom: 1.4rem;
+}
+
+.about-description {
+  text-align: justify;
+  color: var(--text);
+  margin-bottom: 1.6rem;
+  line-height: 1.7;
+}
+
+.about-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.about-list li {
+  margin-bottom: 0.6rem;
+  color: var(--gold-light);
+  font-weight: 500;
+}
+
+/* RIGHT SIDE */
+.about-info-box {
+  background: rgba(255,255,255,0.04);
+  padding: 1.8rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 0 25px rgba(0,0,0,0.4);
+}
+
+.about-address {
+  margin-bottom: 1.4rem;
+}
+
+.about-address h3 {
+  color: var(--gold-light);
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.about-address p {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* MAP */
+.about-map {
+  width: 100%;
+  height: 260px;
+  border: 1px solid rgba(192,138,82,0.35);
+  border-radius: 14px;
+  margin-top: 1rem;
+  box-shadow: 0 0 25px rgba(0,0,0,0.4);
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .about-premium {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+  margin-top: 3rem;
+  padding: 2rem;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+
+/* ============================
+   FOOTER PREMIUM
+============================ */
+
+.footer-premium {
+  margin-top: 3rem;
+  padding: 2.2rem 1.25rem;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.02);
+  border-radius: 14px 14px 0 0;
+}
+
+.footer-brand {
+  font-size: 1rem;
+  color: var(--muted);
+  margin-bottom: 0.4rem;
+}
+
+.footer-author {
+  font-size: 0.9rem;
+  color: var(--gold-light);
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+}
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+  margin-top: 90px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.95fr;
+  gap: 3.5rem;
+  align-items: center;
+  min-height: 85vh;
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  margin-bottom: 1.2rem;
+  border: 1px solid rgba(192,138,82,0.35);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.03);
+  color: var(--gold-light);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.hero-title {
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  margin-bottom: 1.25rem;
+  max-width: 11ch;
+}
+
+.hero-title span {
+  color: var(--text);
+}
+
+.hero-subtitle {
+  max-width: 800px;
+  font-size: clamp(1.1rem, 2vw, 1.7rem);
+  line-height: 1.5;
+  color: #e2e2e2;
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.hero-btn-primary,
+.hero-btn-secondary {
+  min-width: 240px;
+  padding: 15px 28px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 999px;
+}
+
+.hero-btn-secondary {
+  border: 1px solid rgba(255,255,255,0.22);
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+  backdrop-filter: blur(8px);
+}
+
+.hero-btn-secondary:hover {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+}
+
+.hero-meta {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  gap: 1.2rem 2rem;
+  align-items: center;
+}
+
+.hero-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #f3f3f3;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.hero-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  box-shadow: 0 0 12px rgba(192,138,82,0.55);
+  flex-shrink: 0;
+}
+
+.hero-image-wrap {
+  position: relative;
+}
+
+.hero-image-wrap img {
+  height: 520px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 24px;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.55);
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    min-height: auto;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-title {
+    max-width: 100%;
+  }
+
+  .hero-subtitle {
+    max-width: 100%;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-btn-primary,
+  .hero-btn-secondary {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .hero-meta {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+
+  .hero-image-wrap img {
+    height: 380px;
+  }
+}
+.hero img{
+height:500px;
+object-fit:cover;
+border-radius:20px;
+}
+/* =========================================================
+   HEADER PREMIUM
+========================================================= */
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(5,5,5,.78);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  transition: background .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(192,138,82,.45),
+    transparent
+  );
+  opacity: .7;
+}
+
+.header.scrolled {
+  background: rgba(0,0,0,.92);
+  box-shadow: 0 16px 40px rgba(0,0,0,.55);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.nav {
+  max-width: var(--max);
+  margin: auto;
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 14px 20px;
+}
+
+/* LOGO */
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logo img {
+  width: auto;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 50%;
+  box-shadow: 0 0 22px rgba(192,138,82,.10);
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+}
+
+.logo-text strong {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: .2px;
+}
+
+.logo-text span {
+  font-size: .83rem;
+  font-weight: 500;
+  color: var(--gold-light);
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  opacity: .95;
+}
+
+/* NAV LINKS */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #d3d3d3;
+  font-size: 15px;
+  font-weight: 500;
+  position: relative;
+  transition: color .25s ease;
+  padding: 6px 0;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  transition: width .25s ease;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* BUTTON AREA */
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all .3s ease;
+}
+
+.btn-outline {
+  border: 1px solid rgba(255,255,255,.18);
+  color: #fff;
+  background: rgba(255,255,255,.02);
+}
+
+.btn-outline:hover {
+  background: rgba(255,255,255,.08);
+  border-color: rgba(255,255,255,.30);
+  color: #fff;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  color: #111;
+  box-shadow: 0 8px 22px rgba(192,138,82,.22);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(192,138,82,.36);
+}
+
+.nav-quote {
+  padding: 10px 18px;
+}
+
+.nav-call {
+  padding: 10px 22px;
+  font-weight: 700;
+}
+
+/* HAMBURGER */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 3px;
+  background: white;
+  border-radius: 999px;
+  transition: .3s;
+}
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+  .nav {
+    min-height: 78px;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 78px;
+    right: -100%;
+    width: 260px;
+    height: calc(100vh - 78px);
+    background: rgba(8,8,8,.98);
+    backdrop-filter: blur(14px);
+    border-left: 1px solid rgba(255,255,255,.06);
+    padding: 28px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+    transition: right .35s ease;
+  }
+
+  .nav-links.open {
+    right: 0;
+  }
+
+  .nav-buttons {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .logo img {
+    height: 54px;
+  }
+
+  .logo-text strong {
+    font-size: 1rem;
+  }
+
+  .logo-text span {
+    font-size: .76rem;
+  }
+}
+.more-text{
+display:none;
+}
+
+.see-more-btn{
+background:none;
+border:none;
+color:var(--gold-light);
+font-weight:600;
+cursor:pointer;
+margin-top:10px;
+margin-bottom:16px;
+font-size:15px;
+}
+
+.see-more-btn:hover{
+text-decoration:underline;
+}
+border:3px solid var(--gold-light);
+box-shadow:
+0 0 0 6px rgba(255,255,255,0.04),
+0 20px 50px rgba(0,0,0,.7);
+.founder-image-side{
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.founder-image-side::before{
+content:"";
+position:absolute;
+width:420px;
+height:420px;
+background:radial-gradient(
+circle,
+rgba(192,138,82,0.35) 0%,
+rgba(192,138,82,0.12) 35%,
+transparent 70%
+);
+filter:blur(40px);
+z-index:0;
+}
+
+.founder-premium-img{
+position:relative;
+z-index:1;
+}
+.founder-text-side{
+max-width:560px;
+}
+/* =========================================================
+   WHY CHOOSE US - PREMIUM
+========================================================= */
+
+.why-section {
+  max-width: var(--max);
+  margin: auto;
+  padding: 4rem 1.25rem;
+}
+
+.why-header {
+  margin-bottom: 2rem;
+}
+
+.why-header .section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 0.6rem;
+  line-height: 1.1;
+}
+
+.why-header .section-subtitle {
+  font-size: 1.2rem;
+  color: var(--muted);
+  max-width: 640px;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.why-card {
+  position: relative;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 22px;
+  padding: 2rem 1.6rem;
+  min-height: 220px;
+  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+  overflow: hidden;
+}
+
+.why-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  opacity: 0.95;
+}
+
+.why-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(192,138,82,0.35);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+}
+
+.why-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  background: rgba(192,138,82,0.12);
+  border: 1px solid rgba(192,138,82,0.35);
+  color: var(--gold-light);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.why-card h3 {
+  font-size: 1.9rem;
+  line-height: 1.15;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.why-card p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #d7d7d7;
+  max-width: 24ch;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-card {
+    min-height: auto;
+  }
+
+  .why-card h3 {
+    font-size: 1.6rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header" id="header">
+  <div class="nav">
+
+    <a href="#" class="logo">
+      <img src="images/logo.png" alt="Aquarius Security">
+      <div class="logo-text">
+        <strong>Aquarius</strong>
+        <span>Security Services</span>
+      </div>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#founder">Founder</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-buttons">
+      <a class="btn btn-outline nav-quote" href="#contact">Request Quote</a>
+      <a class="btn btn-primary nav-call" href="tel:+19546876851">Call Now</a>
+    </div>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </div>
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="hero-badge">
+      Professional Security
+    </div>
+
+    <h1 class="hero-title">
+      Professional Security <span>You Can Trust</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      Reliable protection for churches, events, commercial properties and plazas in South Florida.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-primary hero-btn-primary">
+        Free Security Assessment
+      </a>
+
+      <a href="#services" class="btn btn-outline hero-btn-secondary">
+        View Services
+      </a>
+    </div>
+
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-dot"></span>
+        On-site officers
+      </div>
+
+      <div class="hero-meta-item">
+        <span class="hero-dot"></span>
+        24/7 protection
+      </div>
+
+      <div class="hero-meta-item">
+        <span class="hero-dot"></span>
+        Custom security plans
+      </div>
+    </div>
+
+  </div>
+
+  <div class="hero-image-wrap">
+    <img src="images/hero.png" alt="Aquarius Security officer">
+  </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<h2 class="section-title">
+Our Services
+</h2>
+
+<p class="section-subtitle">
+Professional security solutions for every situation.
+</p>
+
+<div class="grid">
+
+<div class="card">
+
+<img src="images/service-church.png">
+
+<h3>Church Security</h3>
+
+<p>
+Respectful protection for religious events.
+</p>
+
+</div>
+
+<div class="card">
+
+<img src="images/service-event.png">
+
+<h3>Event Security</h3>
+
+<p>
+Access control and crowd monitoring.
+</p>
+
+</div>
+
+<div class="card">
+
+<img src="images/service-commercial.png">
+
+<h3>Commercial Security</h3>
+
+<p>
+Professional presence for businesses.
+</p>
+
+</div>
+
+<div class="card">
+
+<img src="images/service-plaza.png">
+
+<h3>Public Areas</h3>
+
+<p>
+Patrol services for plazas and markets.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- WHY -->
+
+<section id="why" class="why-section">
+
+  <div class="why-header">
+    <h2 class="section-title">Why Choose Us</h2>
+    <p class="section-subtitle">Trusted protection backed by experience.</p>
+  </div>
+
+  <div class="why-grid">
+
+    <div class="why-card">
+      <div class="why-icon">01</div>
+      <h3>Experienced Officers</h3>
+      <p>Highly trained security professionals.</p>
+    </div>
+
+    <div class="why-card">
+      <div class="why-icon">02</div>
+      <h3>24/7 Availability</h3>
+      <p>Protection whenever you need it.</p>
+    </div>
+
+    <div class="why-card">
+      <div class="why-icon">03</div>
+      <h3>Community Focused</h3>
+      <p>Proudly serving South Florida.</p>
+    </div>
+
+    <div class="why-card">
+      <div class="why-icon">04</div>
+      <h3>Custom Plans</h3>
+      <p>Security tailored to your needs.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+  <h2 class="section-title">
+    Request a Security Assessment
+  </h2>
+
+  <p class="section-subtitle">
+    Quick, professional and reliable.
+  </p>
+
+  <div class="split">
+
+    <form action="https://formsubmit.co/ing.arthur03@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New Security Request">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="true">
+      <input type="hidden" name="_next" value="https://aquasecuserv.com/">
+      <input type="text" name="_honey" style="display:none">
+
+      <input type="text" name="name" placeholder="Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="text" name="phone" placeholder="Phone">
+      <textarea name="message" placeholder="Message" required></textarea>
+
+      <button class="btn btn-primary" type="submit">
+        Send Request
+      </button>
+    </form>
+
+    <div>
+      <img src="images/contact.png" alt="Contact Aquarius Security">
+
+      <div class="contact-links">
+        <a href="tel:+19546876851">📞 Call</a>
+
+        <a href="https://wa.me/19546876851">
+          💬 WhatsApp
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+<!-- FOUNDER / ABOUT DELBEAU TOUSSAINT -->
+<section id="founder" class="founder-section founder-50-50">
+
+  <!-- Imagen -->
+  <div class="founder-image-side">
+    <img src="images/founder.jpeg" alt="Delbeau Toussaint" class="founder-premium-img">
+  </div>
+
+  <!-- Texto -->
+  <div class="founder-text-side">
+    <h2 class="founder-title">Meet the Founder</h2>
+    <h3 class="founder-name">Delbeau Toussaint</h3>
+
+    <p class="founder-description" id="founderText">
+
+I am Delbeau Toussaint, Licensed Security Officer Classes D, G, and WC from State of Florida. I experienced armed/unarmed security services for nineteen years in this state. I was graduated from Broward College in Criminal Justice.
+
+<span class="more-text">
+
+Also, I am a Veteran of the anterior Haitian Army - Radio Communication Unit. Received a Pre-licensed certificate as Accredited Claims Adjuster from Broward College in 2012, Received a Pre-licensed certificate as Real Estate Sales Associate Agent from Broward College in 2011, Obtained a Diploma as Veterinary Assistant from Stratford Career Institute, New York in 2011, Received a post training certificate on small Ruminant's Popularization and Poultry Culture from International Center of Cooperation for the Agricultural Development (CINADCO) in Kibboutz Shefayim, State of Israel in 1995, Completed the training on the Goat Health and Production Improvement at Winrock International, Hinche Haiti in 1987, Obtained the Diploma of Technician in Production and Animal Health from School of Veterinary Nurses appended to the Faculty of Agronomy and Veterinary Medicine, Damien, Port-Au-Prince, Haiti in 1986. I am also current student in International Relations at Florida International University FIU.
+
+<br><br>
+
+Languages read, written, and spoken:
+<br>
+Haitian Creole: very well<br>
+French: very well<br>
+English: very well<br>
+Spanish: some
+
+</span>
+
+    </p>
+
+    <button class="see-more-btn" onclick="toggleFounder()">
+      See more
+    </button>
+
+    <a href="#contact" class="btn btn-primary founder-btn">Contact Delbeau</a>
+
+  </div>
+
+</section>
+
+<section id="about" class="about-premium">
+
+  <!-- LEFT SIDE: TEXT -->
+  <div class="about-text">
+    <h2 class="about-title">About Aquarius Security Services</h2>
+
+    <p class="about-subtitle">
+      Professional protection for churches, events, commercial properties, and public spaces.
+    </p>
+
+    <p class="about-description">
+      Aquarius Security Services provides professional, reliable, and highly trained security officers 
+      dedicated to protecting churches, events, commercial properties, and public spaces throughout 
+      South Florida. Our mission is to deliver dependable protection while maintaining professionalism, 
+      visibility, and trust within the communities we serve.
+    </p>
+
+    <ul class="about-list">
+      <li>✔ Highly trained officers</li>
+      <li>✔ Professional presence</li>
+      <li>✔ Community‑focused protection</li>
+      <li>✔ Reliable and visible security</li>
+    </ul>
+  </div>
+
+  <!-- RIGHT SIDE: ADDRESSES + MAP -->
+  <div class="about-info-box">
+
+    <div class="about-address">
+      <h3>📍 Office Address</h3>
+      <p>2029A North Dixie Highway<br>Pompano Beach, FL 33060</p>
+    </div>
+
+    <div class="about-address">
+      <h3>📬 Mailing Address</h3>
+      <p>PO Box 667673<br>Pompano Beach, FL 33066</p>
+    </div>
+
+   <iframe 
+  class="about-map"
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3584.497427744138!2d-80.113889!3d26.248889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d900f3f0b9c0d3%3A0x7f4c3a1b2f3e8c0!2s2029%20N%20Dixie%20Hwy%20A%2C%20Pompano%20Beach%2C%20FL%2033060!5e0!3m2!1sen!2sus!4v1700000000000"
+  width="100%"
+  height="260"
+  style="border:0;"
+  allowfullscreen=""
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+
+  </div>
+
+</section>
+
+<!--<!{1}** ABOUT **{1}>
+<section class="lux-about">
+
+  <img src="images/about-premium.jpg" class="lux-about-img">
+
+  <div class="lux-about-text">
+
+    <h2>About Aquarius Security Services</h2>
+
+    <div class="lux-line"></div>
+
+    <p>
+      Aquarius Security Services provides professional, reliable, and highly trained
+      security officers dedicated to protecting churches, events, commercial
+      properties, and public spaces throughout South Florida.
+    </p>
+
+    <p>
+      Our mission is to deliver dependable protection while maintaining professionalism,
+      visibility, and trust within the communities we serve.
+    </p>
+
+    <!{1}** ADDRESS **{1}>
+    <div class="lux-address-box">
+
+      <div class="lux-address-item">
+        <strong>📍 Office Address</strong><br>
+        2029A North Dixie Highway<br>
+        Pompano Beach, FL 33060
+      </div>
+
+      <div class="lux-address-item">
+        <strong>📬 Mailing Address</strong><br>
+        PO Box 667673<br>
+        Pompano Beach, FL 33066
+      </div>
+
+    </div>
+
+    <!{1}** GOOGLE MAP **{1}>
+    <iframe
+      src="https://maps.google.com/maps?q=2029A%20North%20Dixie%20Highway%20Pompano%20Beach&t=&z=13&ie=UTF8&iwloc=&output=embed"
+      class="lux-map">
+    </iframe>
+
+  </div>
+
+</section>
+-->
+
+
+<footer class="footer-premium">
+  <p class="footer-brand">© <span id="year"></span> Aquarius Security Services</p>
+  <p class="footer-author">An Arthur official <strong>ArthurNoLimit</strong> Product</p>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+
+<script>
+document.getElementById("year").textContent=
+new Date().getFullYear()
+</script>
+
+<script>
+  const header = document.getElementById("header");
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("navLinks");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 20) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  });
+
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
+  });
+</script>
+<script>
+
+function toggleFounder(){
+
+const moreText = document.querySelector(".more-text");
+const btn = document.querySelector(".see-more-btn");
+
+if(moreText.style.display === "inline"){
+    
+    moreText.style.display = "none";
+    btn.innerText = "See more";
+
+}else{
+
+    moreText.style.display = "inline";
+    btn.innerText = "See less";
+
+}
+
+}
+
+</script>
+</body>
+</html>
