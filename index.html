@@ -962,6 +962,21 @@ margin-bottom:16px;
     font-size: 15px;
   }
 }
+.more-text {
+  display: none;
+}
+
+.show-more .more-text {
+  display: inline;
+}
+
+.show-more-btn {
+  color: #007bff;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 10px;
+  display: inline-block;
+}
 </style>
 </head>
 
@@ -1267,6 +1282,7 @@ Spanish: some
       Professional protection for churches, events, commercial properties, and public spaces.
     </p>
     <p class="about-description">
+   <span class="show-more-btn" onclick="toggleMore()">See more</span>
 
 Basing on the security's importance in the communities, and its main goal that always stands on "Protection", the following American Authors have challenged our high attention to success on this field.  Kevin Strom, PhD, Document # 232781, Title: The Private Security Industry, he estimated that "the private security industry is a crucial component of security and safety". 
 
@@ -1417,7 +1433,21 @@ if(moreText.style.display === "inline"){
 }
 
 }
-
 </script>
+<script>
+function toggleMore() {
+  const aboutSection = document.querySelector(".about-description");
+  const btn = document.querySelector(".show-more-btn");
+
+  aboutSection.classList.toggle("show-more");
+
+  if (aboutSection.classList.contains("show-more")) {
+    btn.textContent = "See less";
+  } else {
+    btn.textContent = "See more";
+  }
+}
+</script>
+
 </body>
 </html>
