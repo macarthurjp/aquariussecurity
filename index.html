@@ -976,14 +976,35 @@ margin-bottom:16px;
   color: var(--gold-light);
   font-weight: 600;
   cursor: pointer;
-  margin-top: 10px;
-  margin-bottom: 16px;
+  margin-left: 6px;
   font-size: 15px;
 }
 
 .see-more-btn:hover {
   text-decoration: underline;
 }
+
+/* Oculta el botón See less cuando el texto está colapsado */
+.see-less {
+  display: none;
+}
+
+/* Cuando está expandido, oculta el See more y muestra el See less */
+.show-more #aboutBtn {
+  display: none;
+}
+
+.show-more .see-less {
+  display: inline;
+}
+.about-subtitle {
+  margin-bottom: 4px; /* antes era mucho más grande */
+}
+
+.about-description {
+  margin-top: 0; /* elimina el espacio extra */
+}
+
 
 </style>
 </head>
@@ -1289,11 +1310,15 @@ Spanish: some
     <p class="about-subtitle">
       Professional protection for churches, events, commercial properties, and public spaces.
     </p>
-    <p class="about-description" id="aboutText">
+ <p class="about-description" id="aboutText">
 
   Basing on the security's importance in the communities, and its main goal that always stands on "Protection", the following American Authors have challenged our high attention to success on this field. Kevin Strom, PhD, Document # 232781, Title: The Private Security Industry, he estimated that "the private security industry is a crucial component of security and safety".
 
+  <!-- SEE MORE BUTTON (VISIBLE ONLY WHEN COLLAPSED) -->
+  <button class="see-more-btn" id="aboutBtn" onclick="toggleAbout()">See more</button>
+
   <span class="more-text">
+
     It is responsible for protecting at all senses and everywhere in perfect relationship with Police. Second, according to Gina Wohlsdorf at Security by Gina Wohlsdorf-Goodreads, Format: Hardcover, published by Algonquin Books on June 7, 2016, www.goodreads.com, "security is always welcomed even into a palace of opulence and unparalleled services". "It's also grand guinol store telling at its very best". It is not only made with installed cameras because the Officer observations always bring good results protecting the communities' interests.
 
     Aquarius Security Services-LLC wants to respond fast to the client calls daily and nightly. Even though, there exists security cameras, systems, clearance, and deposit, this company decides to post qualified Officers on the sites to observe, report, and prevent crimes. The company also wants to lead a good quality contract security in Miami, Broward, Palm-Beach, Orlando, and somewhere else.
@@ -1303,13 +1328,13 @@ Spanish: some
     We value partnership with our clients and customers. We provide quick responsive, effective, and quality services to solve problems, personal and professional accountabilities while showing highest level commitments to the clients and communities.
 
     To sum up, Aquarius Security Services-LLC assumes all responsibilities about the above remarks and considers security as the vertebrae column of the socio-economic development.
+
+    <!-- SEE LESS BUTTON (VISIBLE ONLY WHEN EXPANDED) -->
+    <button class="see-more-btn see-less" onclick="toggleAbout()">See less</button>
+
   </span>
 
 </p>
-
-<button class="see-more-btn" onclick="toggleAbout()">
-  See more
-</button>
    
     <ul class="about-list">
       <li>✔ Highly trained officers</li>
@@ -1433,38 +1458,11 @@ new Date().getFullYear()
   });
 </script>
 <script>
-
-function toggleFounder(){
-
-const moreText = document.querySelector(".more-text");
-const btn = document.querySelector(".see-more-btn");
-
-if(moreText.style.display === "inline"){
-    
-    moreText.style.display = "none";
-    btn.innerText = "See more";
-
-}else{
-
-    moreText.style.display = "inline";
-    btn.innerText = "See less";
-
-}
-
-}
-<script>
 function toggleAbout() {
   const aboutText = document.getElementById("aboutText");
-  const btn = document.querySelector("#about .see-more-btn");
-
   aboutText.classList.toggle("show-more");
-
-  if (aboutText.classList.contains("show-more")) {
-    btn.textContent = "See less";
-  } else {
-    btn.textContent = "See more";
-  }
 }
 </script>
+
 </body>
 </html>
