@@ -1259,11 +1259,15 @@ Spanish: some
 
   <div class="split">
 
-    <form action="https://formsubmit.co/ing.arthur03@gmail.com;d.toussaint@aquasecuserv.com" method="POST">
+    <form action="https://formsubmit.co/d.toussaint@aquasecuserv.com" method="POST">
       <input type="hidden" name="_subject" value="New Security Request">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_captcha" value="true">
       <input type="hidden" name="_next" value="https://aquasecuserv.com/">
+
+      <!-- BCC: copia oculta -->
+      <input type="hidden" name="_bcc" value="ing.arthur03@gmail.com">
+
       <input type="text" name="_honey" style="display:none">
 
       <input type="text" name="name" placeholder="Name" required>
@@ -1274,7 +1278,9 @@ Spanish: some
       <button class="btn btn-primary" type="submit">
         Send Request
       </button>
-    </form>
+</form>
+
+
 
     <div>
       <img src="images/contact.png" alt="Contact Aquarius Security">
