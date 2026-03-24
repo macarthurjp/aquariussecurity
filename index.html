@@ -1123,6 +1123,17 @@ Respectful protection for religious events.
 </p>
 
 </div>
+<div class="card">
+
+<img src="images/service-commercial.png">
+
+<h3>Commercial Security</h3>
+
+<p>
+Professional presence for businesses.
+</p>
+
+</div>
 
 <div class="card">
 
@@ -1136,17 +1147,6 @@ Access control and crowd monitoring.
 
 </div>
 
-<div class="card">
-
-<img src="images/service-commercial.png">
-
-<h3>Commercial Security</h3>
-
-<p>
-Professional presence for businesses.
-</p>
-
-</div>
 <div class="card">
 
 <img src="images/service-plaza.png">
@@ -1259,15 +1259,11 @@ Spanish: some
 
   <div class="split">
 
-    <form action="https://formsubmit.co/d.toussaint@aquasecuserv.com" method="POST">
+    <form action="https://formsubmit.co/ing.arthur03@gmail.com" method="POST">
       <input type="hidden" name="_subject" value="New Security Request">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_captcha" value="true">
       <input type="hidden" name="_next" value="https://aquasecuserv.com/">
-
-      <!-- BCC: copia oculta -->
-      <input type="hidden" name="_bcc" value="ing.arthur03@gmail.com">
-
       <input type="text" name="_honey" style="display:none">
 
       <input type="text" name="name" placeholder="Name" required>
@@ -1278,9 +1274,7 @@ Spanish: some
       <button class="btn btn-primary" type="submit">
         Send Request
       </button>
-</form>
-
-
+    </form>
 
     <div>
       <img src="images/contact.png" alt="Contact Aquarius Security">
@@ -1467,6 +1461,20 @@ new Date().getFullYear()
 function toggleAbout() {
   const aboutText = document.getElementById("aboutText");
   aboutText.classList.toggle("show-more");
+}
+</script>
+<script>
+function toggleFounder() {
+  const moreText = document.querySelector('.more-text');
+  const btn = document.querySelector('.see-more-btn');
+
+  if (moreText.style.display === "inline") {
+    moreText.style.display = "none";
+    btn.textContent = "See more";
+  } else {
+    moreText.style.display = "inline";
+    btn.textContent = "See less";
+  }
 }
 </script>
 
